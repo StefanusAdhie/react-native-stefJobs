@@ -11,11 +11,6 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-/* react native navigation */
-import com.reactnativenavigation.NavigationApplication;
-/**/
-
-
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {

@@ -2,11 +2,6 @@ package com.stefjobs;
 
 import com.facebook.react.ReactActivity;
 
-/* react native navigation */
-import com.reactnativenavigation.controllers.SplashActivity;
-/**/
-
-
 public class MainActivity extends ReactActivity {
 
     /**
