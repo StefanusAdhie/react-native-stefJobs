@@ -9,45 +9,30 @@ import {
 	StackNavigator
 } from 'react-navigation';
 
+import HomeScreen from './routes/main';
 
-class HomeScreen extends React.Component {
-	static navigationOptions = {
-		title: 'Welcome'
-	};
+import SplashScreen from './pages/splash';
 
-	render() {
-		const { navigate } = this.props.navigation;
-		return(
-			<View>
-				<Text>Hello, Navigation!</Text>
-				<Button
-					onPress = { () => navigate('Chat', { user: 'Lucy' }) }
-					title = 'Chat with Lucy' />
-			</View>
-		)
-	}
+
+const StackNavigatorConfig = {
+	headerMode: 'none'
 };
 
 
-class ChatScreen extends React.Component {
-	static navigationOptions = ({ navigation }) => ({
-		title: 'Chat with ' + navigation.state.params.user
-	});
-
-	render() {
-		return(
-			<View>
-				<Text>Chat with Lucy</Text>
-			</View>
-		)
+const StefJobs = StackNavigator({
+	Splash: {
+		screen: SplashScreen,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Home: {
+		screen: HomeScreen,
+		navigationOptions: {
+			// headerLeft: <Button title='Info' />
+		}
 	}
-};
+}, StackNavigatorConfig);
 
 
-const SimpleApp = StackNavigator({
-	Home: { screen: HomeScreen },
-	Chat: { screen: ChatScreen }
-});
-
-
-module.exports = SimpleApp;
+module.exports = StefJobs;

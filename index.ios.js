@@ -12,6 +12,9 @@ import {
   View
 } from 'react-native';
 
+import StefJobs from './src';
+
+
 export default class stefJobs extends Component {
   render() {
     return (
@@ -50,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('stefJobs', () => stefJobs);
+AppRegistry.registerComponent('stefJobs', () => StefJobs);
