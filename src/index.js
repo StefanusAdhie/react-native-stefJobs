@@ -1,6 +1,8 @@
 import React from 'react';
 import {
-	Text
+	View,
+	Text,
+	Button
 } from 'react-native';
 
 import {
@@ -14,15 +16,37 @@ class HomeScreen extends React.Component {
 	};
 
 	render() {
+		const { navigate } = this.props.navigation;
 		return(
-			<Text>Hello, Navigation!</Text>
+			<View>
+				<Text>Hello, Navigation!</Text>
+				<Button
+					onPress = { () => navigate('Chat', { user: 'Lucy' }) }
+					title = 'Chat with Lucy' />
+			</View>
+		)
+	}
+};
+
+
+class ChatScreen extends React.Component {
+	static navigationOptions = ({ navigation }) => ({
+		title: 'Chat with ' + navigation.state.params.user
+	});
+
+	render() {
+		return(
+			<View>
+				<Text>Chat with Lucy</Text>
+			</View>
 		)
 	}
 };
 
 
 const SimpleApp = StackNavigator({
-	Home: { screen: HomeScreen }
+	Home: { screen: HomeScreen },
+	Chat: { screen: ChatScreen }
 });
 
 
