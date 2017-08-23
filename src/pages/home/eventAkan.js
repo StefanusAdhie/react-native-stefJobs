@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import {
 	View,
 	Text
-} from 'react-native';
+} from 'react-native'
 
 
 class EvenAkan extends React.Component {
@@ -11,8 +11,8 @@ class EvenAkan extends React.Component {
 			<View>
 				<Text>EvenAkanTab</Text>
 			</View>
-		);
+		)
 	}
-};
+}
 
-module.exports = EvenAkan;
+module.exports = EvenAkan

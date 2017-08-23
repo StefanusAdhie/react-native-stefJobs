@@ -1,22 +1,16 @@
-import React from 'react';
-import {
-	View,
-	Text,
-	Button
-} from 'react-native';
-
 import {
 	StackNavigator
-} from 'react-navigation';
+} from 'react-navigation'
 
-import HomeScreen from './routes/main';
+import HomeScreen from './routes/main'
 
-import SplashScreen from './pages/splash';
+import SplashScreen from './pages/splash'
+import QRScreen from './pages/scanQR'
 
 
 const StackNavigatorConfig = {
 	headerMode: 'none'
-};
+}
 
 
 const StefJobs = StackNavigator({
@@ -29,10 +23,16 @@ const StefJobs = StackNavigator({
 	Home: {
 		screen: HomeScreen,
 		navigationOptions: {
-			// headerLeft: <Button title='Info' />
+
+		}
+	},
+	ScanQR: {
+		screen: QRScreen,
+		navigationOptions: {
+
 		}
 	}
-}, StackNavigatorConfig);
+}, StackNavigatorConfig)
 
 
-module.exports = StefJobs;
+module.exports = StefJobs

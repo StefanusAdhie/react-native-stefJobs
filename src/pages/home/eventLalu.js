@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import {
 	View,
 	Text
-} from 'react-native';
+} from 'react-native'
 
 
 class EventLalu extends React.Component {
@@ -11,8 +11,8 @@ class EventLalu extends React.Component {
 			<View>
 				<Text>EventLaluTab</Text>
 			</View>
-		);
+		)
 	}
-};
+}
 
-module.exports = EventLalu;
+module.exports = EventLalu

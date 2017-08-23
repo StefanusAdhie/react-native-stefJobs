@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import {
 	View,
 	Text
-} from 'react-native';
+} from 'react-native'
 
 
 class News extends React.Component {
@@ -11,8 +11,8 @@ class News extends React.Component {
 			<View>
 				<Text>NewsTab</Text>
 			</View>
-		);
+		)
 	}
-};
+}
 
-module.exports = News;
+module.exports = News

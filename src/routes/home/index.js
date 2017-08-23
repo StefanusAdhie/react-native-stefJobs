@@ -1,18 +1,17 @@
-import React from 'react';
-import {
-	View,
-	Text
-} from 'react-native';
-
 import {
 	TabNavigator
-} from 'react-navigation';
+} from 'react-navigation'
 
-import EventTab from './event';
+import EventTab from './event'
 
-import HomeTab from '../../pages/home/home';
-import GalleryTab from '../../pages/home/gallery';
-import NewsTab from '../../pages/home/news';
+import HomeTab from '../../pages/home/home'
+import GalleryTab from '../../pages/home/gallery'
+import NewsTab from '../../pages/home/news'
+
+
+const TabNavigatorConfig = {
+	tabBarPosition: 'top'
+}
 
 
 const HomeScreen = TabNavigator({
@@ -20,6 +19,6 @@ const HomeScreen = TabNavigator({
 	Event: { screen: EventTab },
 	Gallery: { screen: GalleryTab },
 	News: { screen: NewsTab }
-});
+}, TabNavigatorConfig)
 
-module.exports = HomeScreen;
+module.exports = HomeScreen

@@ -1,37 +1,16 @@
-import React from 'react';
-import {
-	View,
-	Text
-} from 'react-native';
-
 import {
 	DrawerNavigator,
 	StackNavigator
-} from 'react-navigation';
+} from 'react-navigation'
 
-import HomeScreen from './home';
+import HomeScreen from './home'
 
-import RekorPayScreen from '../pages/rekorPay';
-
-
-class MenuTwoScreen extends React.Component {
-	static navigationOptions = {
-		headerTitle: 'Menu Two Screen'
-	};
-
-	render() {
-		return(
-			<View>
-				<Text>MenuTwoScreen</Text>
-			</View>
-		);
-	}
-};
+import RekorPayScreen from '../pages/rekorPay'
 
 
 const DrawerNavigatorConfig = {
 	// headerMode: 'screen'
-};
+}
 
 
 const Main = DrawerNavigator({
@@ -54,12 +33,7 @@ const Main = DrawerNavigator({
 				}
 			}
 		})
-	},
-	MenuTwo:{
-		screen: StackNavigator({
-			MenuTwoScreen: { screen: MenuTwoScreen }
-		})
 	}
-}, DrawerNavigatorConfig);
+}, DrawerNavigatorConfig)
 
-module.exports = Main;
+module.exports = Main

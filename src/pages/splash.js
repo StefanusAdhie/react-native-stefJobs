@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import {
 	View,
 	Text
-} from 'react-native';
+} from 'react-native'
 
 
 class SplashScreen extends React.Component {
@@ -11,20 +11,20 @@ class SplashScreen extends React.Component {
 			<View>
 				<Text>Splash</Text>
 			</View>
-		);
+		)
 	}
 
 	componentDidMount() {
 		setTimeout(() => {
-			// this.props.navigation.navigate('Home');
+			// this.props.navigation.navigate('Home')
 			this.props.navigation.dispatch({
 			  type: 'Navigation/RESET',
 			  index: 0,
 			  actions: [{ type: 'Navigation/NAVIGATE', routeName: 'Home' }]
-			});
+			})
 		}, 3000)
 	}
-};
+}
 
 
-module.exports = SplashScreen;
+module.exports = SplashScreen

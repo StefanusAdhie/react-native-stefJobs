@@ -1,15 +1,9 @@
-import React from 'react';
-import {
-	View,
-	Text
-} from 'react-native';
-
 import {
 	TabNavigator
-} from 'react-navigation';
+} from 'react-navigation'
 
-import EventTabAkan from '../../pages/home/eventAkan';
-import EventTabLalu from '../../pages/home/eventLalu';
+import EventTabAkan from '../../pages/home/eventAkan'
+import EventTabLalu from '../../pages/home/eventLalu'
 
 
 const TabNavigatorConfig = {
@@ -20,6 +14,6 @@ const TabNavigatorConfig = {
 const EventTab = TabNavigator({
 	EventAkan: { screen: EventTabAkan },
 	EventLalu: { screen: EventTabLalu }
-}, TabNavigatorConfig);
+}, TabNavigatorConfig)
 
-module.exports = EventTab;
+module.exports = EventTab
