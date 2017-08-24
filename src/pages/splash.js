@@ -4,6 +4,8 @@ import {
 	Text
 } from 'react-native'
 
+import { getToken } from '../config/token'
+
 
 class SplashScreen extends React.Component {
 	render() {
@@ -14,15 +16,26 @@ class SplashScreen extends React.Component {
 		)
 	}
 
-	componentDidMount() {
+	next(pages) {
 		setTimeout(() => {
-			// this.props.navigation.navigate('Home')
 			this.props.navigation.dispatch({
 			  type: 'Navigation/RESET',
 			  index: 0,
-			  actions: [{ type: 'Navigation/NAVIGATE', routeName: 'Home' }]
+			  actions: [{ type: 'Navigation/NAVIGATE', routeName: pages }]
 			})
 		}, 3000)
+	}
+
+	componentWillMount() {
+		getToken((token) => {
+			if(token) {
+				// have token
+				this.next('Home')
+			} else {
+				// don't have token
+				this.next('Login')
+			}
+		})
 	}
 }
 

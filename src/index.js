@@ -5,6 +5,7 @@ import {
 import HomeScreen from './routes/main'
 
 import SplashScreen from './pages/splash'
+import LoginScreen from './pages/login'
 import QRScreen from './pages/scanQR'
 
 
@@ -16,6 +17,12 @@ const StackNavigatorConfig = {
 const StefJobs = StackNavigator({
 	Splash: {
 		screen: SplashScreen,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Login: {
+		screen: LoginScreen,
 		navigationOptions: {
 			header: null
 		}

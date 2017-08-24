@@ -5,15 +5,28 @@ import {
 	TextInput,
 	TouchableHighlight
 } from 'react-native'
-
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import QRCode from 'react-native-qrcode'
-
 import { connect } from 'react-redux'
+
 import { addPerson, deletePerson } from '../../redux/actions/people'
+
+import QRCode from '../../components/QRCode'
 
 
 class Home extends React.Component {
+	static navigationOptions = ({ navigation }) => ({
+		headerLeft: (
+			<TouchableHighlight
+				style={{padding: 10}}
+				onPress={ () => navigation.navigate('DrawerOpen') } >
+				<Ionicons
+					name = 'md-menu'
+					size = {30}
+					color = 'black' />
+			</TouchableHighlight>
+		)
+	})
+
 	state = {
 		inputValue: ''
 	}
@@ -41,14 +54,7 @@ class Home extends React.Component {
 			<View>
 				<Text>HomeTab</Text>
 
-				<Ionicons
-					name = 'md-alarm'
-					size = {30}
-					color = 'black' />
-
 				<View>
-					<Text>People</Text>
-
 					<TextInput
 						onChangeText = { text => this.updateInput(text) }
 						value = { this.state.inputValue }
@@ -70,10 +76,7 @@ class Home extends React.Component {
 									onPress = { this.deletePerson.bind(this, person) }>Delete Person</Text>
 
 								<QRCode
-				          value = { person.name }
-				          size = { 100 }
-				          bgColor = 'red'
-				          fgColor = 'white' />
+				          value = { person.name } />
 							</View>
 						))
 					}

@@ -1,5 +1,6 @@
 import {
-	TabNavigator
+	TabNavigator,
+	StackNavigator
 } from 'react-navigation'
 
 import EventTab from './event'
@@ -10,13 +11,26 @@ import NewsTab from '../../pages/home/news'
 
 
 const TabNavigatorConfig = {
-	tabBarPosition: 'top'
+	tabBarPosition: 'top',
+	swipeEnabled: true,
+	animationEnabled: true,
+	lazy: false
 }
 
 
 const HomeScreen = TabNavigator({
 	Home: { screen: HomeTab },
-	Event: { screen: EventTab },
+	// Event: { screen: EventTab },
+	Event: {
+		screen: StackNavigator({
+			EventScreen: {
+				screen: EventTab,
+				navigationOptions: {
+					header: null
+				}
+			}
+		})
+	},
 	Gallery: { screen: GalleryTab },
 	News: { screen: NewsTab }
 }, TabNavigatorConfig)
