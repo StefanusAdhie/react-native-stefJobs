@@ -12,12 +12,22 @@ import {
   View
 } from 'react-native';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './src/redux/reducers';
+let store = createStore(rootReducer);
+
 import StefJobs from './src';
 
 
 export default class stefJobs extends Component {
   render() {
     return (
+      <Provider store={store}>
+        <StefJobs />
+      </Provider>
+    )
+    /*return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to React Native!
@@ -30,7 +40,7 @@ export default class stefJobs extends Component {
           Cmd+D or shake for dev menu
         </Text>
       </View>
-    );
+    );*/
   }
 }
 
@@ -53,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('stefJobs', () => StefJobs);
+AppRegistry.registerComponent('stefJobs', () => stefJobs);
