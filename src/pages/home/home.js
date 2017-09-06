@@ -8,7 +8,7 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { connect } from 'react-redux'
 
-import { addPerson, deletePerson } from '../../redux/actions/people'
+import { addPeople, deletePeople } from '../../redux/actions/people'
 
 import QRCode from '../../components/QRCode'
 
@@ -31,18 +31,18 @@ class Home extends React.Component {
 		inputValue: ''
 	}
 
-	addPerson = () => {
+	addPeople = () => {
 		if(this.state.inputValue === '') return
 
-		this.props.dispatchAddPerson({
+		this.props.dispatchAddPeople({
 			name: this.state.inputValue
 		})
 
 		this.setState({ inputValue: '' })
 	}
 
-	deletePerson = (person) => {
-		this.props.dispatchDeletePerson(person)
+	deletePeople = (people) => {
+		this.props.dispatchDeletePeople(people)
 	}
 
 	updateInput = (inputValue) => {
@@ -61,22 +61,23 @@ class Home extends React.Component {
 						placeholder = 'Name' />
 
 					<TouchableHighlight
-						onPress = { this.addPerson }>
-						<Text>Add Person</Text>
+						onPress = { this.addPeople }>
+						<Text>Add People</Text>
 					</TouchableHighlight>
 
 					{
-						this.props.people.map((person, index) => (
+						this.props.people.map((people, index) => (
 							<View
 								key = { index }
 								style = {{flexDirection: 'row'}} >
-								<Text>Name : { person.name }</Text>
+								<Text>Name : { people.id }</Text>
+								<Text>Name : { people.name }</Text>
 
 								<Text
-									onPress = { this.deletePerson.bind(this, person) }>Delete Person</Text>
+									onPress = { this.deletePeople.bind(this, people) }>Delete People</Text>
 
 								<QRCode
-				          value = { person.name } />
+				          value = { people.name } />
 							</View>
 						))
 					}
@@ -96,8 +97,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    dispatchAddPerson: (person) => dispatch(addPerson(person)),
-    dispatchDeletePerson: (person) => dispatch(deletePerson(person))
+    dispatchAddPeople: (people) => dispatch(addPeople(people)),
+    dispatchDeletePeople: (people) => dispatch(deletePeople(people))
   }
 }
 
