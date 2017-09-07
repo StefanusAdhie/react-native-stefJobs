@@ -5,11 +5,18 @@ import {
 	TextInput
 } from 'react-native'
 
+import Button from '../components/button'
+
 
 class Login extends React.Component {
 	state = {
 		email: '',
-		password: ''
+		password: '',
+		test: ''
+	}
+
+	login() {
+		this.props.navigation.navigate('Home')
 	}
 
 	render() {
@@ -25,6 +32,12 @@ class Login extends React.Component {
 					placeholder = 'password'
 					secureTextEntry = { true }
 					value = { this.state.password } />
+
+				<Text>{ this.state.test }</Text>
+
+				<Button
+					name = { 'Login' }
+					onPress = { this.login.bind(this) } />
 			</View>
 		)
 	}
