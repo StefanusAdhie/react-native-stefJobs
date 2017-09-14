@@ -1,15 +1,15 @@
 import peopleReducer from '../reducers/people'
 
-export function addPerson(person) {
+export function addPeople(people) {
   return {
-    type: 'ADD_PERSON',
-    person
+    type: 'ADD_PEOPLE',
+    people
   }
 }
 
-export function deletePerson(person) {
+export function deletePeople(people) {
   return {
-    type: 'DELETE_PERSON',
-    person
+    type: 'DELETE_PEOPLE',
+    people
   }
 }
