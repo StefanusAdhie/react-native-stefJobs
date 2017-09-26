@@ -14,23 +14,13 @@ const TabNavigatorConfig = {
 	tabBarPosition: 'top',
 	swipeEnabled: true,
 	animationEnabled: true,
-	lazy: false
+	lazy: false,
 }
 
 
 const HomeScreen = TabNavigator({
 	Home: { screen: HomeTab },
-	// Event: { screen: EventTab },
-	Event: {
-		screen: StackNavigator({
-			EventScreen: {
-				screen: EventTab,
-				navigationOptions: {
-					header: null
-				}
-			}
-		})
-	},
+	Event: { screen: EventTab },
 	Gallery: { screen: GalleryTab },
 	News: { screen: NewsTab }
 }, TabNavigatorConfig)

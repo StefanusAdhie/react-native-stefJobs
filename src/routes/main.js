@@ -9,17 +9,29 @@ import RekorPayScreen from '../pages/rekorPay'
 
 
 const DrawerNavigatorConfig = {
-	// headerMode: 'screen'
+	headerMode: 'screen'
 }
 
 
 const Main = DrawerNavigator({
+	/*Home: {
+		screen: HomeScreen,
+		navigationOptions: {
+			headerTitle: 'Ini Home nya'
+		}
+	},
+	RekorPay: {
+		screen: RekorPayScreen,
+		navigationOptions: {
+			headerTitle: 'Rekor Pay nya'
+		}
+	}*/
 	Home: {
 		screen: StackNavigator({
 			HomeScreen: {
 				screen: HomeScreen,
 				navigationOptions: {
-					headerTitle: 'Title'
+					// headerTitle: 'Title Home'
 				}
 			}
 		}),

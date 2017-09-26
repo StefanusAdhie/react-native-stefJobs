@@ -7,13 +7,25 @@ import EventTabLalu from '../../pages/home/eventLalu'
 
 
 const TabNavigatorConfig = {
-	tabBarPosition:  'bottom'
+	tabBarPosition:  'bottom',
+	swipeEnabled: false,
+  animationEnabled: false
 }
 
 
 const EventTab = TabNavigator({
-	EventAkan: { screen: EventTabAkan },
-	EventLalu: { screen: EventTabLalu }
+	EventAkan: {
+		screen: EventTabAkan,
+		navigationOptions: {
+			// header: null
+		}
+	},
+	EventLalu: {
+		screen: EventTabLalu,
+		navigationOptions: {
+			// header: null
+		}
+	}
 }, TabNavigatorConfig)
 
 module.exports = EventTab

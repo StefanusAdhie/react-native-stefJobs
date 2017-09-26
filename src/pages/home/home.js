@@ -47,7 +47,8 @@ class Home extends React.Component {
 					size = {30}
 					color = 'black' />
 			</TouchableHighlight>
-		)
+		),
+		headerTitle: 'Home'
 	})
 
 	state = {
@@ -76,9 +77,9 @@ class Home extends React.Component {
 		return(
 			<View>
 			<ScrollView
-        onScroll={ Animated.event([{nativeEvent: {contentOffset: {y: this._animatedValue}}}]) }
-        scrollEventThrottle={16}>
-				<Text>HomeTab</Text>
+        onScroll = { Animated.event([{nativeEvent: {contentOffset: {y: this._animatedValue}}}]) }
+        scrollEventThrottle = { 16 } >
+				<Text> HomeTab </Text>
 
 				<View>
 					<TextInput
@@ -88,7 +89,7 @@ class Home extends React.Component {
 
 					<TouchableHighlight
 						onPress = { this.addPeople }>
-						<Text>Add People</Text>
+						<Text> Add People </Text>
 					</TouchableHighlight>
 
 					{
@@ -96,8 +97,8 @@ class Home extends React.Component {
 							<View
 								key = { index }
 								style = {{flexDirection: 'row'}} >
-								<Text>Name : { people.id }</Text>
-								<Text>Name : { people.name }</Text>
+								<Text> Name : { people.id } </Text>
+								<Text> Name : { people.name } </Text>
 
 								<Text
 									onPress = { this.deletePeople.bind(this, people) }>Delete People</Text>
