@@ -5,14 +5,14 @@ import {
 } from 'react-native'
 
 
-class eventDetail extends React.Component {
+class ClassScreen extends React.Component {
 	render() {
-		return(
+		return (
 			<View>
-				<Text> Event Detail </Text>
+				<Text> Class Screen </Text>
 			</View>
 		)
 	}
 }
 
-export default eventDetail
+module.exports = ClassScreen

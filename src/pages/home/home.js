@@ -5,7 +5,7 @@ import {
 	ScrollView,
 	Text,
 	TextInput,
-	TouchableHighlight,
+	TouchableOpacity,
 	Animated
 } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -18,9 +18,9 @@ import QRCode from '../../components/QRCode'
 
 class Home extends React.Component {
 	constructor(props) {
-    super(props);
+    super(props)
 
-    this._animatedValue = new Animated.Value(0);
+    this._animatedValue = new Animated.Value(0)
   }
 
 	static navigationOptions = ({ navigation }) => ({
@@ -39,14 +39,14 @@ class Home extends React.Component {
       overflow: 'hidden',*/
     },
 		headerLeft: (
-			<TouchableHighlight
+			<TouchableOpacity
 				style={{padding: 10}}
 				onPress={ () => navigation.navigate('DrawerOpen') } >
 				<Ionicons
 					name = 'md-menu'
 					size = {30}
 					color = 'black' />
-			</TouchableHighlight>
+			</TouchableOpacity>
 		),
 		headerTitle: 'Home'
 	})
@@ -78,7 +78,7 @@ class Home extends React.Component {
 			<View>
 			<ScrollView
         onScroll = { Animated.event([{nativeEvent: {contentOffset: {y: this._animatedValue}}}]) }
-        scrollEventThrottle = { 16 } >
+        scrollEventThrottle = { 16 }>
 				<Text> HomeTab </Text>
 
 				<View>
@@ -87,10 +87,10 @@ class Home extends React.Component {
 						value = { this.state.inputValue }
 						placeholder = 'Name' />
 
-					<TouchableHighlight
+					<TouchableOpacity
 						onPress = { this.addPeople }>
 						<Text> Add People </Text>
-					</TouchableHighlight>
+					</TouchableOpacity>
 
 					{
 						this.props.people.map((people, index) => (

@@ -11,7 +11,7 @@ import EventDetailScreen from './pages/eventDetail'
 
 
 const StackNavigatorConfig = {
-	headerMode: 'none'
+	// headerMode: 'none'
 }
 
 
@@ -31,7 +31,7 @@ const StefJobs = StackNavigator({
 	Home: {
 		screen: HomeScreen,
 		navigationOptions: {
-
+			header: null
 		}
 	},
 	ScanQR: {

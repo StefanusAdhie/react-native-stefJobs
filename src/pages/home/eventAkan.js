@@ -3,7 +3,7 @@ import {
 	View,
 	Text,
 	TextInput,
-	TouchableHighlight
+	TouchableOpacity
 } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
@@ -11,14 +11,14 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 class EvenAkan extends React.Component {
 	static navigationOptions = ({ navigation }) => ({
 		headerLeft: (
-			<TouchableHighlight
+			<TouchableOpacity
 				style={{padding: 10}}
 				onPress={ () => navigation.navigate('DrawerOpen') } >
 				<Ionicons
 					name = 'md-menu'
 					size = {30}
 					color = 'black' />
-			</TouchableHighlight>
+			</TouchableOpacity>
 		),
 		headerTitle: 'Event Akan'
 	})
